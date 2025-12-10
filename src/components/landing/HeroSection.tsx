@@ -42,9 +42,10 @@ const HeroSection = () => {
         email: "",
       });
     } finally {
-      setIsSubmitting(false);
+    setIsSubmitting(false);
     }
   };
+  return (
   <section className="relative min-h-screen flex items-center pt-32 md:pt-24 lg:pt-20">
     {/* Background Image */}
     <div
@@ -195,6 +196,7 @@ const HeroSection = () => {
         </div>
       </div>
     </div>
-  </section>;
+  </section>
+  );
 };
 export default HeroSection;
