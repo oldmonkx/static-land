@@ -8,6 +8,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import masterPlanImage from '@/assets/master-plan.jpeg';
 
 const MasterPlan = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -66,8 +67,8 @@ const MasterPlan = () => {
             onClick={() => setIsModalOpen(true)}
           >
             <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop"
-              alt="Casa Dale Master Plan"
+              src={masterPlanImage}
+              alt="Casa Dale Master Plan - HMDA Approved Layout with RERA No: P02400008723"
               className="w-full h-auto rounded-xl group-hover:scale-[1.02] transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300 rounded-xl" />
