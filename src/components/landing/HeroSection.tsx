@@ -56,15 +56,12 @@ const HeroSection = () => {
           {/* Left Content - 3 columns */}
           <div className="lg:col-span-3 space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <p className="text-accent font-medium tracking-wide uppercase text-sm">
-                Premium Villa Plots
-              </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary leading-tight">
                 Biophilic<br />
                 <span className="text-accent">Villa Plots</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                in South Hyderabad's High Growth Zone
+                in South Hyderabad's<br className="md:hidden" /> High Growth Zone
               </p>
             </div>
 
