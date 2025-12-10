@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { GraduationCap, Stethoscope, Building, TreePine, Briefcase } from 'lucide-react';
+import SiteVisitForm from './SiteVisitForm';
 
 const locationData = [
   {
@@ -78,8 +79,27 @@ const locationData = [
 
 const LocationSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-soft-gray">
-      <div className="container mx-auto px-4">
+    <section className="py-20 md:py-28 bg-soft-gray relative overflow-hidden">
+      {/* Nature SVG Background - Tree Ring Pattern */}
+      <svg
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.03]"
+        viewBox="0 0 400 400"
+        fill="none"
+        stroke="hsl(var(--primary))"
+        strokeWidth="0.5"
+      >
+        <circle cx="200" cy="200" r="190" />
+        <circle cx="200" cy="200" r="170" />
+        <circle cx="200" cy="200" r="150" />
+        <circle cx="200" cy="200" r="130" />
+        <circle cx="200" cy="200" r="110" />
+        <circle cx="200" cy="200" r="90" />
+        <circle cx="200" cy="200" r="70" />
+        <circle cx="200" cy="200" r="50" />
+        <circle cx="200" cy="200" r="30" />
+      </svg>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary mb-4">
             Connected by Highway,<br />
@@ -137,6 +157,11 @@ const LocationSection = () => {
               ))}
             </Accordion>
           </div>
+        </div>
+
+        {/* Site Visit Form */}
+        <div className="max-w-md mx-auto mt-16">
+          <SiteVisitForm source="Location Section" />
         </div>
       </div>
     </section>

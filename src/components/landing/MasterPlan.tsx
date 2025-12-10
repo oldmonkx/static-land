@@ -50,8 +50,24 @@ const MasterPlan = () => {
   };
 
   return (
-    <section id="master-plan" className="py-20 md:py-28 bg-soft-gray">
-      <div className="container mx-auto px-4">
+    <section id="master-plan" className="py-20 md:py-28 bg-soft-gray relative overflow-hidden">
+      {/* Nature SVG Background - Topographic Lines */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.03]"
+        viewBox="0 0 400 400"
+        fill="none"
+        stroke="hsl(var(--primary))"
+        strokeWidth="1"
+      >
+        <ellipse cx="200" cy="200" rx="180" ry="120" />
+        <ellipse cx="200" cy="200" rx="150" ry="100" />
+        <ellipse cx="200" cy="200" rx="120" ry="80" />
+        <ellipse cx="200" cy="200" rx="90" ry="60" />
+        <ellipse cx="200" cy="200" rx="60" ry="40" />
+        <ellipse cx="200" cy="200" rx="30" ry="20" />
+      </svg>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <p className="text-accent font-medium tracking-wide uppercase text-sm mb-4">
             Thoughtfully Designed
