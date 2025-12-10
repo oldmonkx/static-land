@@ -1,10 +1,10 @@
-import { Shield, CheckCircle } from 'lucide-react';
+import { Shield, CheckCircle } from "lucide-react";
 
 const certifications = [
-  { name: 'HMDA Approved', description: 'Fully sanctioned layout' },
-  { name: 'RERA Registered', description: 'Real Estate Regulatory Authority' },
-  { name: 'Clear Title', description: 'Legally Verified Documentation' },
-  { name: 'Bank Approved', description: 'Easy Loan Assistance Available' },
+  { name: "HMDA Approved", description: "Fully Sanctioned Layout" },
+  { name: "RERA Registered", description: "Absolute Peace of Mind" },
+  { name: "Clear Title", description: "100% Clear Titles With Spot Registration" },
+  { name: "Bank Approved", description: "Pre-approved by Leading Banks" },
 ];
 
 const Certifications = () => {
@@ -36,13 +36,9 @@ const Certifications = () => {
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Shield className="w-6 h-6 text-accent" />
-            <p className="text-accent font-medium tracking-wide uppercase text-sm">
-              Trust & Transparency
-            </p>
+            <p className="text-accent font-medium tracking-wide uppercase text-sm">Trust & Transparency</p>
           </div>
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary">
-            Certifications & Approvals
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary">Certifications & Approvals</h2>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
@@ -61,7 +57,6 @@ const Certifications = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
