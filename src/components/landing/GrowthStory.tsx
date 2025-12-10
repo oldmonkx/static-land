@@ -1,5 +1,3 @@
-import SiteVisitForm from './SiteVisitForm';
-
 const specs = [
   { label: 'Type', value: 'Ready-to-Build Villa Plots' },
   { label: 'Plot Sizes', value: '167 to 500 sq yds' },
@@ -40,31 +38,19 @@ const GrowthStory = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8 items-start">
-            {/* Specs Table */}
-            <div className="lg:col-span-3 bg-card rounded-2xl shadow-lg border border-border/50 overflow-hidden">
-              <div className="grid md:grid-cols-2">
-                {specs.map((spec, index) => (
-                  <div
-                    key={index}
-                    className={`p-6 border-b border-border/50 md:border-r ${
-                      index % 2 === 1 ? 'md:border-r-0' : ''
-                    } ${index >= specs.length - 2 ? 'border-b-0 md:border-b' : ''} ${
-                      index >= specs.length - 1 ? 'md:border-b-0' : ''
-                    } last:border-b-0`}
-                  >
-                    <p className="text-sm text-muted-foreground uppercase tracking-wide mb-1">
-                      {spec.label}
-                    </p>
-                    <p className="font-semibold text-primary text-lg">{spec.value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Site Visit Form */}
-            <div className="lg:col-span-2">
-              <SiteVisitForm source="Growth Story Section" />
+          <div className="bg-card rounded-2xl shadow-lg border border-border/50 overflow-hidden">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3">
+              {specs.map((spec, index) => (
+                <div
+                  key={index}
+                  className="p-6 border-b border-border/50 md:border-r last:border-r-0 md:last:border-b-0"
+                >
+                  <p className="text-sm text-muted-foreground uppercase tracking-wide mb-1">
+                    {spec.label}
+                  </p>
+                  <p className="font-semibold text-primary text-lg">{spec.value}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

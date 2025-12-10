@@ -68,7 +68,7 @@ const SiteVisitForm = ({ source = 'Site Visit Form', className = '' }: SiteVisit
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-3 rounded-lg transition-colors disabled:opacity-70"
+          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-3 rounded-lg transition-colors disabled:opacity-70 animate-subtle-pulse"
         >
           {isSubmitting ? 'SENDING...' : 'SEND'}
         </button>

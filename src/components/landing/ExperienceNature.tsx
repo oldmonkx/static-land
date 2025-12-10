@@ -10,7 +10,7 @@ const features = [
 
 const ExperienceNature = () => {
   return (
-    <section id="experience-nature" className="py-20 md:py-28 bg-primary text-primary-foreground">
+    <section id="experience-nature" className="py-20 md:py-28 bg-primary text-primary-foreground overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4">

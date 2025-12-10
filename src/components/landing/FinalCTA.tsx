@@ -74,7 +74,7 @@ Invest In Your Future.
               ...formData,
               email: e.target.value
             })} required className="h-12 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-accent flex-1" />
-              <Button type="submit" disabled={isSubmitting} className="h-12 px-8 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+              <Button type="submit" disabled={isSubmitting} className="h-12 px-8 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold animate-subtle-pulse">
                 {isSubmitting ? 'Submitting...' : <>
                     Get Details <ArrowRight className="w-4 h-4 ml-2" />
                   </>}
