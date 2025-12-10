@@ -12,7 +12,7 @@ const ExperienceNature = () => {
   return (
     <section
       id="experience-nature"
-      className="py-20 md:py-28 bg-primary text-primary-foreground overflow-hidden"
+      className="py-20 md:py-28 bg-primary text-primary-foreground overflow-hidden relative z-10 isolate"
       style={{ backgroundImage: "none" }}
     >
       <div className="container mx-auto px-4">

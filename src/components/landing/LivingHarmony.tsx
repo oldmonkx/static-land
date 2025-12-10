@@ -35,7 +35,7 @@ const features = [
 
 const LivingHarmony = () => {
   return (
-    <section id="living-harmony" className="py-20 md:py-28 bg-background relative overflow-hidden">
+    <section id="living-harmony" className="py-20 md:py-28 bg-background relative overflow-hidden isolate">
       {/* Nature SVG Background - Botanical Leaves */}
       <svg
         className="absolute top-0 right-0 w-96 h-96 opacity-[0.04] text-primary"
