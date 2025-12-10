@@ -5,6 +5,7 @@ import TrustStrip from '@/components/landing/TrustStrip';
 import HighwayFacing from '@/components/landing/HighwayFacing';
 import ExperienceNature from '@/components/landing/ExperienceNature';
 import LivingHarmony from '@/components/landing/LivingHarmony';
+import SiteVisitSection from '@/components/landing/SiteVisitSection';
 import GrowthStory from '@/components/landing/GrowthStory';
 import MasterPlan from '@/components/landing/MasterPlan';
 import PlotSizes from '@/components/landing/PlotSizes';
@@ -35,6 +36,7 @@ const Index = () => {
           <HighwayFacing />
           <ExperienceNature />
           <LivingHarmony />
+          <SiteVisitSection />
           <GrowthStory />
           <MasterPlan />
           <PlotSizes />

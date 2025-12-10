@@ -165,7 +165,7 @@ Discover Your Dream Home on Srisailam Highway!
                   email: e.target.value
                 })} required className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400" />
                 </div>
-                <Button type="submit" disabled={isSubmitting} className="w-full h-12 text-white font-semibold text-lg hover:opacity-90 transition-opacity" style={{
+                <Button type="submit" disabled={isSubmitting} className="w-full h-12 text-white font-semibold text-lg hover:opacity-90 transition-opacity animate-subtle-pulse" style={{
                 backgroundColor: '#D4AF37'
               }}>
                   {isSubmitting ? 'Submitting...' : 'Enquire Now'}
