@@ -3,6 +3,8 @@ import { Shield, CheckCircle } from 'lucide-react';
 const certifications = [
   { name: 'HMDA Approved', description: 'Hyderabad Metropolitan Development Authority' },
   { name: 'RERA Registered', description: 'Real Estate Regulatory Authority' },
+  { name: 'Clear Title', description: 'Legally Verified Documentation' },
+  { name: 'Bank Approved', description: 'Easy Loan Assistance Available' },
 ];
 
 const Certifications = () => {
@@ -21,18 +23,18 @@ const Certifications = () => {
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="flex items-center gap-4 bg-soft-gray px-6 py-4 rounded-xl border border-border/50"
+              className="flex flex-col items-center text-center gap-3 bg-soft-gray px-4 py-6 rounded-xl border border-border/50"
             >
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
                 <CheckCircle className="w-6 h-6 text-accent" />
               </div>
               <div>
                 <p className="font-semibold text-primary">{cert.name}</p>
-                <p className="text-sm text-muted-foreground">{cert.description}</p>
+                <p className="text-xs text-muted-foreground">{cert.description}</p>
               </div>
             </div>
           ))}
