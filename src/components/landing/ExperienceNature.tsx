@@ -1,16 +1,20 @@
-import { CheckCircle2, Leaf, Home, MapPin, Wrench } from 'lucide-react';
+import { CheckCircle2, Leaf, Home, MapPin, Wrench } from "lucide-react";
 
 const features = [
-  { icon: CheckCircle2, title: 'Ready To Occupy', description: 'Move in whenever you\'re ready' },
-  { icon: Leaf, title: 'Biophilic Layout', description: 'Nature-integrated design' },
-  { icon: Home, title: 'Gated Villa-Plot Community', description: 'Secure & exclusive' },
-  { icon: MapPin, title: 'Excellent Connectivity', description: 'Strategic location' },
-  { icon: Wrench, title: 'Future-ready Amenities', description: 'Modern infrastructure' },
+  { icon: CheckCircle2, title: "Ready To Occupy", description: "Move in whenever you're ready" },
+  { icon: Leaf, title: "Biophilic Layout", description: "Nature-integrated design" },
+  { icon: Home, title: "Gated Villa-Plot Community", description: "Secure & exclusive" },
+  { icon: MapPin, title: "Excellent Connectivity", description: "Strategic location" },
+  { icon: Wrench, title: "Future-ready Amenities", description: "Modern infrastructure" },
 ];
 
 const ExperienceNature = () => {
   return (
-    <section id="experience-nature" className="py-20 md:py-28 bg-primary text-primary-foreground overflow-hidden">
+    <section
+      id="experience-nature"
+      className="py-20 md:py-28 bg-primary text-primary-foreground overflow-hidden"
+      style={{ backgroundImage: "none" }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4">
