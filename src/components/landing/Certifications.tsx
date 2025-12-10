@@ -1,5 +1,4 @@
 import { Shield, CheckCircle } from 'lucide-react';
-import SiteVisitForm from './SiteVisitForm';
 
 const certifications = [
   { name: 'HMDA Approved', description: 'Hyderabad Metropolitan Development Authority' },
@@ -63,10 +62,6 @@ const Certifications = () => {
           ))}
         </div>
 
-        {/* Site Visit Form */}
-        <div className="max-w-md mx-auto mt-12">
-          <SiteVisitForm source="Certifications Section" />
-        </div>
       </div>
     </section>
   );
