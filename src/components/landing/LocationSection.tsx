@@ -4,33 +4,75 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { GraduationCap, Stethoscope, ShoppingBag, Building, MapPin } from 'lucide-react';
+import { GraduationCap, Stethoscope, Building, TreePine, Briefcase } from 'lucide-react';
 
 const locationData = [
   {
+    icon: Building,
+    title: 'Premium Communities Nearby',
+    items: [
+      'BTR BY MAK PROJECTS',
+      'KAVURI FOREST NEST',
+      'VISHAL SANJIVINI',
+      'RAMKY DISCOVERY CITY',
+      'DSR (SRI SREENIVASA)',
+      'MAK',
+      'PRANEETH PRANAV REDFERN SQUARE VILLAS',
+      'EIPL TREASURE TROVE',
+      'FIVE ELEMENT SPACE',
+      'VAMSIRAM',
+      'SIGNATURE VILLAS',
+    ],
+  },
+  {
     icon: GraduationCap,
-    title: 'Education Hubs',
-    items: ['Coming soon...'],
+    title: 'Schools Nearby',
+    items: [
+      'Manchester Global School',
+      'Bashyam Blooms',
+      'Sri Sri Academy',
+      'Aga Khan Academy',
+      'DPS AeroCity',
+    ],
   },
   {
     icon: Stethoscope,
-    title: 'Healthcare',
-    items: ['Coming soon...'],
+    title: 'Hospitals Nearby',
+    items: [
+      'Madhavanji Integrated Health City',
+      'Sri Vijaya Sai Hospitals',
+      'Kondeti Hospital',
+      'Prime Care Super Speciality Hospital',
+    ],
   },
   {
-    icon: ShoppingBag,
-    title: 'Entertainment & Retail Hubs',
-    items: ['Coming soon...'],
+    icon: TreePine,
+    title: 'Recreational Areas',
+    items: [
+      'RECREATIONAL HUB In future city',
+      'GMR INTERCHANGE',
+      'Retail outlet mall',
+      'High-Street Restaurant',
+      'PVR open air theatre',
+      'WONDERLA AMUSEMENT PARK',
+      'PULLELA GOPICHAND BADMINTON ACADEMY',
+    ],
   },
   {
-    icon: Building,
-    title: 'Business, Tech & Industrial Hubs',
-    items: ['Coming soon...'],
-  },
-  {
-    icon: MapPin,
-    title: 'Other Landmarks',
-    items: ['Coming soon...'],
+    icon: Briefcase,
+    title: 'Employment Centres Nearby',
+    items: [
+      'E CITY - HFCL LIMITED',
+      'E CITY - Radiant company',
+      'E CITY - Premier Energies Photovoltaic pvt ltd',
+      'Future City - Amazon Data Centre',
+      'Future City - Young India skill University',
+      'Future City - AI University',
+      'Future City - Sports University',
+      'Future City - Health University',
+      'GMR Business Park',
+      'World Trade Centre',
+    ],
   },
 ];
 

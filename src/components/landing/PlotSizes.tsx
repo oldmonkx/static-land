@@ -12,8 +12,10 @@ import { toast } from 'sonner';
 
 const plotSizes = [
   { size: 167, label: '167 Sq Yds', description: 'Compact & Smart' },
-  { size: 250, label: '250 Sq Yds', description: 'Popular Choice' },
-  { size: 500, label: '500 Sq Yds', description: 'Premium & Spacious' },
+  { size: 200, label: '200 Sq Yds', description: 'Ideal Starter' },
+  { size: 258, label: '258 Sq Yds', description: 'Popular Choice' },
+  { size: 326, label: '326 Sq Yds', description: 'Family Favorite' },
+  { size: 390, label: '390 Sq Yds', description: 'Premium & Spacious' },
 ];
 
 const PlotSizes = () => {
@@ -63,7 +65,7 @@ const PlotSizes = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section id="plot-sizes" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-accent font-medium tracking-wide uppercase text-sm mb-4">
@@ -75,24 +77,25 @@ const PlotSizes = () => {
           <div className="w-20 h-1 bg-accent mx-auto" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
           {plotSizes.map((plot) => (
             <div
               key={plot.size}
-              className="group p-8 rounded-2xl bg-soft-gray hover:bg-champagne-light border border-border/50 hover:border-accent/50 transition-all duration-300 text-center"
+              className="group p-6 md:p-8 rounded-2xl bg-soft-gray hover:bg-champagne-light border border-border/50 hover:border-accent/50 transition-all duration-300 text-center"
             >
               <div className="mb-4">
-                <span className="text-4xl md:text-5xl font-serif font-bold text-primary">
+                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">
                   {plot.size}
                 </span>
-                <span className="text-lg text-muted-foreground ml-2">Sq Yds</span>
+                <span className="text-sm md:text-base text-muted-foreground ml-1">Sq Yds</span>
               </div>
-              <p className="text-muted-foreground mb-6">{plot.description}</p>
+              <p className="text-muted-foreground text-sm mb-4">{plot.description}</p>
               <Button
                 onClick={() => handleUnlockPrice(plot.size)}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-sm"
+                size="sm"
               >
-                <Lock className="w-4 h-4 mr-2" />
+                <Lock className="w-3 h-3 mr-1" />
                 Unlock Price
               </Button>
             </div>
