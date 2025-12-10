@@ -34,17 +34,16 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-primary shadow-md py-1' // Reduced padding to minimum (Slimmer bar)
-          : 'bg-gradient-to-b from-black/70 to-transparent py-2' // Reduced padding here too
+          ? 'bg-primary shadow-md py-2'
+          : 'bg-gradient-to-b from-black/70 to-transparent py-3'
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          {/* Logo size kept exactly as requested (Large) */}
           <img 
             src={logo} 
             alt="Casa Dale" 
-            className="h-28 md:h-32 lg:h-40 w-auto object-contain transition-all duration-300" 
+            className="h-16 sm:h-20 md:h-28 lg:h-32 w-auto object-contain transition-all duration-300 drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]" 
           />
         </div>
 
