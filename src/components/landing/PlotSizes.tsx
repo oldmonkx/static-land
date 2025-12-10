@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Lock } from 'lucide-react';
+import { Lock, Phone, Gift, BadgeCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -81,7 +81,7 @@ const PlotSizes = () => {
           {plotSizes.map((plot) => (
             <div
               key={plot.size}
-              className="group p-6 md:p-8 rounded-2xl bg-soft-gray hover:bg-champagne-light border border-border/50 hover:border-accent/50 transition-all duration-300 text-center"
+              className="group flex flex-col h-full p-6 md:p-8 rounded-2xl bg-soft-gray hover:bg-champagne-light border border-border/50 hover:border-accent/50 transition-all duration-300 text-center"
             >
               <div className="mb-4">
                 <span className="text-3xl md:text-4xl font-serif font-bold text-primary">
@@ -92,8 +92,7 @@ const PlotSizes = () => {
               <p className="text-muted-foreground text-sm mb-4">{plot.description}</p>
               <Button
                 onClick={() => handleUnlockPrice(plot.size)}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-sm"
-                size="sm"
+                className="w-full mt-auto bg-primary hover:bg-primary/90 text-primary-foreground text-sm px-4 py-2"
               >
                 <Lock className="w-3 h-3 mr-1" />
                 Unlock Price
@@ -142,6 +141,22 @@ const PlotSizes = () => {
               >
                 {isSubmitting ? 'Submitting...' : 'Get Price Details'}
               </Button>
+
+              {/* Trust badges */}
+              <div className="grid grid-cols-3 gap-2 pt-4 border-t border-border/30">
+                <div className="flex flex-col items-center text-center">
+                  <Phone className="w-4 h-4 mb-1 text-accent" />
+                  <span className="text-[10px] font-medium text-muted-foreground leading-tight">Instant Call Back</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <Gift className="w-4 h-4 mb-1 text-accent" />
+                  <span className="text-[10px] font-medium text-muted-foreground leading-tight">Attractive Offers</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <BadgeCheck className="w-4 h-4 mb-1 text-accent" />
+                  <span className="text-[10px] font-medium text-muted-foreground leading-tight">Best Price Guaranteed</span>
+                </div>
+              </div>
             </form>
           </DialogContent>
         </Dialog>

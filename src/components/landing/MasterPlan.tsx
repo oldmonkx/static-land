@@ -8,6 +8,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { Phone, Gift, BadgeCheck } from 'lucide-react';
 import masterPlanImage from '@/assets/master-plan.jpeg';
 
 const MasterPlan = () => {
@@ -117,6 +118,22 @@ const MasterPlan = () => {
             >
               {isSubmitting ? 'Submitting...' : 'View Master Plan'}
             </Button>
+
+            {/* Trust badges */}
+            <div className="grid grid-cols-3 gap-2 pt-4 border-t border-border/30">
+              <div className="flex flex-col items-center text-center">
+                <Phone className="w-4 h-4 mb-1 text-accent" />
+                <span className="text-[10px] font-medium text-muted-foreground leading-tight">Instant Call Back</span>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <Gift className="w-4 h-4 mb-1 text-accent" />
+                <span className="text-[10px] font-medium text-muted-foreground leading-tight">Attractive Offers</span>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <BadgeCheck className="w-4 h-4 mb-1 text-accent" />
+                <span className="text-[10px] font-medium text-muted-foreground leading-tight">Best Price Guaranteed</span>
+              </div>
+            </div>
           </form>
         </DialogContent>
       </Dialog>

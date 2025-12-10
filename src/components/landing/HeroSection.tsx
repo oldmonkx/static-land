@@ -59,7 +59,7 @@ const HeroSection = () => {
               <p className="text-accent font-medium tracking-wide uppercase text-sm">
                 Premium Villa Plots
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary leading-tight">
                 Biophilic<br />
                 <span className="text-accent">Villa Plots</span>
               </h1>
@@ -162,9 +162,6 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <p className="text-xs text-muted-foreground text-center mt-5">
-                By submitting, you agree to our privacy policy and terms of service.
-              </p>
             </div>
           </div>
         </div>
