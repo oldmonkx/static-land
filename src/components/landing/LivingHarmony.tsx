@@ -35,8 +35,26 @@ const features = [
 
 const LivingHarmony = () => {
   return (
-    <section id="living-harmony" className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="living-harmony" className="py-20 md:py-28 bg-background relative overflow-hidden">
+      {/* Nature SVG Background - Botanical Leaves */}
+      <svg
+        className="absolute top-0 right-0 w-96 h-96 opacity-[0.04] text-primary"
+        viewBox="0 0 200 200"
+        fill="currentColor"
+      >
+        <path d="M100 0C100 0 120 40 120 80C120 120 100 140 100 140C100 140 80 120 80 80C80 40 100 0 100 0Z" />
+        <path d="M140 20C140 20 160 60 160 100C160 140 140 160 140 160C140 160 120 140 120 100C120 60 140 20 140 20Z" />
+        <path d="M60 30C60 30 80 70 80 110C80 150 60 170 60 170C60 170 40 150 40 110C40 70 60 30 60 30Z" />
+      </svg>
+      <svg
+        className="absolute bottom-0 left-0 w-80 h-80 opacity-[0.03] text-accent rotate-180"
+        viewBox="0 0 200 200"
+        fill="currentColor"
+      >
+        <path d="M100 0C100 0 130 50 130 100C130 150 100 180 100 180C100 180 70 150 70 100C70 50 100 0 100 0Z" />
+      </svg>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <p className="text-accent font-medium tracking-wide uppercase text-sm mb-4">
             Discover The Difference

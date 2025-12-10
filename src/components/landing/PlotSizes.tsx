@@ -38,7 +38,6 @@ const PlotSizes = () => {
     setIsSubmitting(true);
 
     try {
-      // Webhook integration - replace with your Pabbly Connect URL
       const webhookUrl = 'YOUR_PABBLY_WEBHOOK_URL';
       
       await fetch(webhookUrl, {
@@ -65,8 +64,23 @@ const PlotSizes = () => {
   };
 
   return (
-    <section id="plot-sizes" className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="plot-sizes" className="py-20 md:py-28 bg-background relative overflow-hidden">
+      {/* Nature SVG Background - Organic Dots Pattern */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.04]"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <pattern id="dots-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="1.5" fill="hsl(var(--primary))" />
+            <circle cx="13" cy="13" r="1" fill="hsl(var(--accent))" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-pattern)" />
+      </svg>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <p className="text-accent font-medium tracking-wide uppercase text-sm mb-4">
             Choose Your Perfect Size

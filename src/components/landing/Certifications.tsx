@@ -1,4 +1,5 @@
 import { Shield, CheckCircle } from 'lucide-react';
+import SiteVisitForm from './SiteVisitForm';
 
 const certifications = [
   { name: 'HMDA Approved', description: 'Hyderabad Metropolitan Development Authority' },
@@ -9,8 +10,30 @@ const certifications = [
 
 const Certifications = () => {
   return (
-    <section className="py-16 md:py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-20 bg-background relative overflow-hidden">
+      {/* Nature SVG Background - Eucalyptus Branch */}
+      <svg
+        className="absolute top-0 left-0 w-72 h-72 opacity-[0.05] text-accent"
+        viewBox="0 0 200 200"
+        fill="currentColor"
+      >
+        <ellipse cx="30" cy="50" rx="15" ry="25" transform="rotate(-30 30 50)" />
+        <ellipse cx="50" cy="80" rx="12" ry="20" transform="rotate(-45 50 80)" />
+        <ellipse cx="70" cy="110" rx="15" ry="25" transform="rotate(-30 70 110)" />
+        <ellipse cx="90" cy="140" rx="12" ry="20" transform="rotate(-50 90 140)" />
+        <path d="M20 30 Q60 90, 100 160" stroke="currentColor" strokeWidth="3" fill="none" opacity="0.6" />
+      </svg>
+      <svg
+        className="absolute bottom-0 right-0 w-64 h-64 opacity-[0.04] text-primary rotate-180"
+        viewBox="0 0 200 200"
+        fill="currentColor"
+      >
+        <ellipse cx="30" cy="50" rx="15" ry="25" transform="rotate(-30 30 50)" />
+        <ellipse cx="50" cy="80" rx="12" ry="20" transform="rotate(-45 50 80)" />
+        <ellipse cx="70" cy="110" rx="15" ry="25" transform="rotate(-30 70 110)" />
+      </svg>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Shield className="w-6 h-6 text-accent" />
@@ -38,6 +61,11 @@ const Certifications = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Site Visit Form */}
+        <div className="max-w-md mx-auto mt-12">
+          <SiteVisitForm source="Certifications Section" />
         </div>
       </div>
     </section>
