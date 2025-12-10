@@ -15,7 +15,7 @@ const HighwayFacing = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary mb-6">
               Prime 100' Highway Facing Property
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl font-medium text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Experience the luxury of seamless connectivity. Casa Dale's prime location on the 100-foot Srisailam Highway means zero detours and instant access to the city's lifelines. You are just minutes away from the Outer Ring Road and Rajiv Gandhi International Airport, ensuring your daily commute is effortless while you enjoy the prestige of a main-road address.
             </p>
           </div>
@@ -28,7 +28,7 @@ const HighwayFacing = () => {
               <h3 className="font-serif font-semibold text-lg text-primary mb-2">
                 100' Wide Highway
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-[15px] font-medium text-slate-600">
                 Direct access to Srisailam Highway
               </p>
             </div>
@@ -40,7 +40,7 @@ const HighwayFacing = () => {
               <h3 className="font-serif font-semibold text-lg text-primary mb-2">
                 ORR Proximity
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-[15px] font-medium text-slate-600">
                 Minutes away from Outer Ring Road
               </p>
             </div>
@@ -52,7 +52,7 @@ const HighwayFacing = () => {
               <h3 className="font-serif font-semibold text-lg text-primary mb-2">
                 RGIA Access
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-[15px] font-medium text-slate-600">
                 Quick connectivity to the airport
               </p>
             </div>

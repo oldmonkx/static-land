@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
+import TrustStrip from '@/components/landing/TrustStrip';
 import HighwayFacing from '@/components/landing/HighwayFacing';
 import ExperienceNature from '@/components/landing/ExperienceNature';
 import LivingHarmony from '@/components/landing/LivingHarmony';
@@ -30,6 +31,7 @@ const Index = () => {
         <Header />
         <main>
           <HeroSection />
+          <TrustStrip />
           <HighwayFacing />
           <ExperienceNature />
           <LivingHarmony />

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
+import { Phone, Gift, BadgeCheck } from 'lucide-react';
 import heroImage from '@/assets/hero-aerial.jpg';
 
 const HeroSection = () => {
@@ -51,9 +52,9 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Content */}
-          <div className="space-y-8 animate-fade-in">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          {/* Left Content - 3 columns */}
+          <div className="lg:col-span-3 space-y-8 animate-fade-in">
             <div className="space-y-4">
               <p className="text-accent font-medium tracking-wide uppercase text-sm">
                 Premium Villa Plots
@@ -91,19 +92,20 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Form */}
-          <div className="lg:pl-8">
-            <div className="bg-card p-8 md:p-10 rounded-2xl shadow-xl border border-border/50">
+          {/* Right Form - 2 columns */}
+          <div className="lg:col-span-2 lg:justify-self-end w-full max-w-md">
+            <div className="bg-white/90 backdrop-blur-xl p-8 md:p-10 rounded-2xl shadow-2xl border border-white/20">
               <div className="text-center mb-8">
-                <h2 className="text-2xl font-serif font-semibold text-primary mb-2">
+                <h2 className="text-2xl font-serif font-semibold text-primary mb-1">
                   Get Exclusive Details
                 </h2>
-                <p className="text-muted-foreground">
+                <div className="w-12 h-0.5 bg-accent mx-auto mt-2" />
+                <p className="text-muted-foreground mt-3">
                   Register your interest today
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <Input
                     type="text"
@@ -111,7 +113,7 @@ const HeroSection = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
-                    className="h-12 bg-soft-gray border-border/50 focus:border-accent"
+                    className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400"
                   />
                 </div>
                 <div>
@@ -121,7 +123,7 @@ const HeroSection = () => {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
-                    className="h-12 bg-soft-gray border-border/50 focus:border-accent"
+                    className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400"
                   />
                 </div>
                 <div>
@@ -131,19 +133,36 @@ const HeroSection = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    className="h-12 bg-soft-gray border-border/50 focus:border-accent"
+                    className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400"
                   />
                 </div>
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg"
+                  className="w-full h-12 text-white font-semibold text-lg hover:opacity-90 transition-opacity"
+                  style={{ backgroundColor: '#D4AF37' }}
                 >
-                  {isSubmitting ? 'Submitting...' : 'Request Callback'}
+                  {isSubmitting ? 'Submitting...' : 'Enquire Now'}
                 </Button>
               </form>
 
-              <p className="text-xs text-muted-foreground text-center mt-6">
+              {/* Trust badges */}
+              <div className="grid grid-cols-3 gap-2 mt-6 pt-5 border-t border-border/30">
+                <div className="flex flex-col items-center text-center">
+                  <Phone className="w-4 h-4 mb-1" style={{ color: '#D4AF37' }} />
+                  <span className="text-[10px] font-medium text-slate-700 leading-tight">Instant Call Back</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <Gift className="w-4 h-4 mb-1" style={{ color: '#D4AF37' }} />
+                  <span className="text-[10px] font-medium text-slate-700 leading-tight">Attractive Offers</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <BadgeCheck className="w-4 h-4 mb-1" style={{ color: '#D4AF37' }} />
+                  <span className="text-[10px] font-medium text-slate-700 leading-tight">Best Price Guaranteed</span>
+                </div>
+              </div>
+
+              <p className="text-xs text-muted-foreground text-center mt-5">
                 By submitting, you agree to our privacy policy and terms of service.
               </p>
             </div>
