@@ -31,8 +31,8 @@ const Certifications = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Shield className="w-6 h-6 text-accent" />
-            <p className="text-accent font-medium tracking-wide uppercase text-sm">Trust & Transparency</p>
+            <Shield className="text-accent w-[30px] h-[30px]" />
+            <p className="text-accent font-medium tracking-wide uppercase text-3xl">Trust & Transparency</p>
           </div>
           
         </div>
