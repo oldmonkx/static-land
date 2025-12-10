@@ -1,7 +1,7 @@
 import { Shield, CheckCircle } from 'lucide-react';
 
 const certifications = [
-  { name: 'HMDA Approved', description: 'Hyderabad Metropolitan Development Authority' },
+  { name: 'HMDA Approved', description: 'Fully sanctioned layout' },
   { name: 'RERA Registered', description: 'Real Estate Regulatory Authority' },
   { name: 'Clear Title', description: 'Legally Verified Documentation' },
   { name: 'Bank Approved', description: 'Easy Loan Assistance Available' },
