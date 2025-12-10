@@ -95,7 +95,7 @@ const PlotSizes = () => {
           {plotSizes.map((plot) => (
             <div
               key={plot.size}
-              className="group flex flex-col h-full p-6 md:p-8 rounded-2xl bg-soft-gray hover:bg-champagne-light border border-border/50 hover:border-accent/50 transition-all duration-300 text-center"
+              className="group flex flex-col h-full p-4 md:p-8 rounded-2xl bg-soft-gray hover:bg-champagne-light border border-border/50 hover:border-accent/50 transition-all duration-300 text-center"
             >
               <div className="mb-4">
                 <span className="text-3xl md:text-4xl font-serif font-bold text-primary">
@@ -106,9 +106,9 @@ const PlotSizes = () => {
               <p className="text-muted-foreground text-sm mb-4">{plot.description}</p>
               <Button
                 onClick={() => handleUnlockPrice(plot.size)}
-                className="w-full mt-auto bg-primary hover:bg-primary/90 text-primary-foreground text-sm px-4 py-2"
+                className="w-full mt-auto bg-primary hover:bg-primary/90 text-primary-foreground text-xs md:text-sm px-2 md:px-4 py-2"
               >
-                <Lock className="w-3 h-3 mr-1" />
+                <Lock className="w-3 h-3 mr-1 flex-shrink-0 hidden sm:block" />
                 Unlock Price
               </Button>
             </div>
