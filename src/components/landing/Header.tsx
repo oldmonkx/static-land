@@ -43,7 +43,7 @@ const Header = () => {
           <img 
             src={logo} 
             alt="Casa Dale" 
-            className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain transition-all duration-300 drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]"
+            className="h-24 sm:h-28 md:h-28 lg:h-32 w-auto object-contain transition-all duration-300 drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]"
           />
         </div>
 
