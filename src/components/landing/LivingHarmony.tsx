@@ -56,7 +56,7 @@ const LivingHarmony = () => {
               <div className="w-14 h-14 mb-6 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
                 <feature.icon className="w-7 h-7 text-primary group-hover:text-accent transition-colors duration-300" />
               </div>
-              <h3 className="font-serif font-semibold text-xl text-primary mb-3">
+              <h3 className="font-display font-semibold text-xl text-primary mb-3">
                 {feature.title}
               </h3>
               <p className="text-[15px] font-medium text-slate-700 leading-relaxed">

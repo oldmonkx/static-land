@@ -15,7 +15,7 @@ const HighwayFacing = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary mb-6">
               Prime 100' Highway Facing Property
             </h2>
-            <p className="text-lg md:text-xl font-medium text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg font-medium text-slate-700 max-w-3xl mx-auto leading-relaxed">
               Experience the luxury of seamless connectivity. Casa Dale's prime location on the 100-foot Srisailam Highway means zero detours and instant access to the city's lifelines. You are just minutes away from the Outer Ring Road and Rajiv Gandhi International Airport, ensuring your daily commute is effortless while you enjoy the prestige of a main-road address.
             </p>
           </div>
