@@ -29,7 +29,7 @@ const ExperienceNature = () => {
                 <feature.icon className="w-8 h-8 text-accent" />
               </div>
               <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-              <p className="text-sm text-primary-foreground/70">{feature.description}</p>
+              <p className="text-[15px] font-medium text-primary-foreground/80">{feature.description}</p>
             </div>
           ))}
         </div>

@@ -59,7 +59,7 @@ const LivingHarmony = () => {
               <h3 className="font-serif font-semibold text-xl text-primary mb-3">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-[15px] font-medium text-slate-700 leading-relaxed">
                 {feature.description}
               </p>
             </div>
