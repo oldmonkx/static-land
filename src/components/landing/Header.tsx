@@ -33,12 +33,15 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        isScrolled 
+          ? 'bg-primary shadow-md py-2' // Dark Green background on scroll (Matches Nature Theme)
+          : 'bg-gradient-to-b from-black/60 to-transparent py-4' // Dark gradient at top so white logo pops
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <img src={logo} alt="Casa Dale" className="h-14 md:h-16 lg:h-20 w-auto" />
+          {/* INCREASED LOGO SIZE HERE vvv */}
+          <img src={logo} alt="Casa Dale" className="h-20 md:h-24 lg:h-28 w-auto object-contain" />
         </div>
 
         {/* Desktop Navigation */}
@@ -48,7 +51,7 @@ const Header = () => {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-primary/80 hover:text-primary font-medium transition-colors"
+              className="text-white/90 hover:text-accent font-medium transition-colors tracking-wide text-lg"
             >
               {link.label}
             </a>
@@ -56,7 +59,7 @@ const Header = () => {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
-            className="px-6 py-2.5 bg-accent text-accent-foreground font-medium rounded-md hover:bg-accent/90 transition-colors"
+            className="px-6 py-2.5 bg-accent text-white font-bold rounded-md hover:bg-accent/90 transition-colors shadow-lg"
           >
             Enquire Now
           </a>
@@ -64,24 +67,24 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-primary"
+          className="md:hidden p-2 text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
         </button>
       </div>
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border/50">
-          <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-primary border-t border-white/10 absolute w-full left-0 top-full">
+          <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-primary/80 hover:text-primary font-medium py-2 transition-colors"
+                className="text-white hover:text-accent font-medium py-2 transition-colors text-lg border-b border-white/10"
               >
                 {link.label}
               </a>
@@ -89,7 +92,7 @@ const Header = () => {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="px-6 py-2.5 bg-accent text-accent-foreground font-medium rounded-md hover:bg-accent/90 transition-colors text-center"
+              className="mt-4 w-full block px-6 py-3 bg-accent text-white font-bold rounded-md hover:bg-accent/90 transition-colors text-center"
             >
               Enquire Now
             </a>
