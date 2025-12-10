@@ -4,50 +4,52 @@ import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { Phone, Gift, BadgeCheck } from 'lucide-react';
 import heroImage from '@/assets/hero-aerial.jpg';
-
 const HeroSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
+    email: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       // Webhook integration - replace with your Pabbly Connect URL
       const webhookUrl = 'YOUR_PABBLY_WEBHOOK_URL';
-      
       await fetch(webhookUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
           ...formData,
           source: 'Hero Form',
-          timestamp: new Date().toISOString(),
-        }),
+          timestamp: new Date().toISOString()
+        })
       });
-
       toast.success('Thank you! Our team will contact you shortly.');
-      setFormData({ name: '', phone: '', email: '' });
+      setFormData({
+        name: '',
+        phone: '',
+        email: ''
+      });
     } catch (error) {
       toast.success('Thank you! Our team will contact you shortly.');
-      setFormData({ name: '', phone: '', email: '' });
+      setFormData({
+        name: '',
+        phone: '',
+        email: ''
+      });
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center pt-20">
+  return <section className="relative min-h-screen flex items-center pt-20">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroImage})`
+    }}>
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
       </div>
 
@@ -94,51 +96,78 @@ const HeroSection = () => {
             <div className="bg-white/90 backdrop-blur-xl p-8 md:p-10 rounded-2xl shadow-2xl border border-white/20">
               <div className="text-center mb-8">
                 <h2 className="text-2xl font-serif font-semibold text-primary mb-1">
-                  Get Exclusive Details
+                  Enquire Now 
                 </h2>
                 <div className="w-12 h-0.5 bg-accent mx-auto mt-2" />
                 <p className="text-muted-foreground mt-3">
-                  Register your interest today
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Discover Your Dream Home on Srisailam Highway!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Input
-                    type="text"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400"
-                  />
+                  <Input type="text" placeholder="Your Name" value={formData.name} onChange={e => setFormData({
+                  ...formData,
+                  name: e.target.value
+                })} required className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400" />
                 </div>
                 <div>
-                  <Input
-                    type="tel"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    required
-                    className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400"
-                  />
+                  <Input type="tel" placeholder="Phone Number" value={formData.phone} onChange={e => setFormData({
+                  ...formData,
+                  phone: e.target.value
+                })} required className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400" />
                 </div>
                 <div>
-                  <Input
-                    type="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400"
-                  />
+                  <Input type="email" placeholder="Email Address" value={formData.email} onChange={e => setFormData({
+                  ...formData,
+                  email: e.target.value
+                })} required className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400" />
                 </div>
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full h-12 text-white font-semibold text-lg hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: '#D4AF37' }}
-                >
+                <Button type="submit" disabled={isSubmitting} className="w-full h-12 text-white font-semibold text-lg hover:opacity-90 transition-opacity" style={{
+                backgroundColor: '#D4AF37'
+              }}>
                   {isSubmitting ? 'Submitting...' : 'Enquire Now'}
                 </Button>
               </form>
@@ -146,15 +175,21 @@ const HeroSection = () => {
               {/* Trust badges */}
               <div className="grid grid-cols-3 gap-2 mt-6 pt-5 border-t border-border/30">
                 <div className="flex flex-col items-center text-center">
-                  <Phone className="w-4 h-4 mb-1" style={{ color: '#D4AF37' }} />
+                  <Phone className="w-4 h-4 mb-1" style={{
+                  color: '#D4AF37'
+                }} />
                   <span className="text-[10px] font-medium text-slate-700 leading-tight">Instant Call Back</span>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <Gift className="w-4 h-4 mb-1" style={{ color: '#D4AF37' }} />
+                  <Gift className="w-4 h-4 mb-1" style={{
+                  color: '#D4AF37'
+                }} />
                   <span className="text-[10px] font-medium text-slate-700 leading-tight">Attractive Offers</span>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <BadgeCheck className="w-4 h-4 mb-1" style={{ color: '#D4AF37' }} />
+                  <BadgeCheck className="w-4 h-4 mb-1" style={{
+                  color: '#D4AF37'
+                }} />
                   <span className="text-[10px] font-medium text-slate-700 leading-tight">Best Price Guaranteed</span>
                 </div>
               </div>
@@ -163,8 +198,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
