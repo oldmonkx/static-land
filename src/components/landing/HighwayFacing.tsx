@@ -1,6 +1,6 @@
 import { Route, MapPin, Plane } from 'lucide-react';
 const HighwayFacing = () => {
-  return <section className="py-16 md:py-24 bg-gradient-to-br from-accent/10 via-background to-accent/5">
+  return <section className="py-16 md:py-24 bg-gradient-to-br from-accent/10 via-background to-accent/5 relative overflow-hidden isolate">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
