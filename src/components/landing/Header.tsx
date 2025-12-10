@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '@/assets/casa-dale-logo.png';
 
 const navLinks = [
   { label: 'Highlights', href: '#experience-nature' },
@@ -36,8 +37,8 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="font-serif text-2xl font-bold text-primary">Casa Dale</span>
+        <div className="flex items-center">
+          <img src={logo} alt="Casa Dale" className="h-10 md:h-12 w-auto" />
         </div>
 
         {/* Desktop Navigation */}
