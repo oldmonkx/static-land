@@ -60,6 +60,11 @@ export default {
           DEFAULT: "hsl(var(--champagne))",
           light: "hsl(var(--champagne-light))",
         },
+        forest: {
+          DEFAULT: "hsl(var(--forest))",
+          light: "hsl(var(--forest-light))",
+        },
+        sage: "hsl(var(--sage))",
         navy: {
           DEFAULT: "hsl(var(--navy))",
           light: "hsl(var(--navy-light))",
