@@ -1,10 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
+import HighwayFacing from '@/components/landing/HighwayFacing';
 import ExperienceNature from '@/components/landing/ExperienceNature';
 import LivingHarmony from '@/components/landing/LivingHarmony';
 import GrowthStory from '@/components/landing/GrowthStory';
-import VideoSection from '@/components/landing/VideoSection';
 import MasterPlan from '@/components/landing/MasterPlan';
 import PlotSizes from '@/components/landing/PlotSizes';
 import Gallery from '@/components/landing/Gallery';
@@ -30,10 +30,10 @@ const Index = () => {
         <Header />
         <main>
           <HeroSection />
+          <HighwayFacing />
           <ExperienceNature />
           <LivingHarmony />
           <GrowthStory />
-          <VideoSection />
           <MasterPlan />
           <PlotSizes />
           <Gallery />

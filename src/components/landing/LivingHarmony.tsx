@@ -35,7 +35,7 @@ const features = [
 
 const LivingHarmony = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section id="living-harmony" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-accent font-medium tracking-wide uppercase text-sm mb-4">
