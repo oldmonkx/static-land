@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { Phone, Gift, BadgeCheck } from "lucide-react";
 import heroImage from "@/assets/hero-aerial.jpg";
 import { isValidIndianPhone } from "@/lib/validation";
+import { submitLead } from "@/lib/leadService";
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -37,18 +38,7 @@ const HeroSection = () => {
     
     setIsSubmitting(true);
     try {
-      const webhookUrl = "YOUR_PABBLY_WEBHOOK_URL";
-      await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          source: "Hero Form",
-          timestamp: new Date().toISOString(),
-        }),
-      });
+      await submitLead({ ...formData, source: "Hero Form" });
       toast.success("Thank you! Our team will contact you shortly.");
       setFormData({ name: "", phone: "", email: "" });
       setPhoneError("");
