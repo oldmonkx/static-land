@@ -101,7 +101,9 @@ const HeroSection = () => {
               <div className="text-center mb-8">
                 <h2 className="text-2xl font-serif font-semibold text-primary mb-1">Get Price Sheet & Layout</h2>
                 <div className="w-12 h-0.5 bg-accent mx-auto mt-2" />
-                <p className="text-muted-foreground mt-3">Discover Your Dream Home on Srisailam Highway!</p>
+                <p className="text-muted-foreground mt-3">
+                  Secure Your Piece of Land in Hyderabad's Fastest Growing Corridor.
+                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
