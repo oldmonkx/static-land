@@ -138,16 +138,21 @@ const HeroSection = () => {
                   />
                 </div>
                 <div>
-                  <Input
-                    type="tel"
-                    placeholder="Phone Number (10 digits)"
-                    value={formData.phone}
-                    onChange={(e) => handlePhoneChange(e.target.value)}
-                    maxLength={10}
-                    required
-                    className={`h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400 ${phoneError ? 'border-red-400 focus:border-red-400' : ''}`}
-                  />
-                  {phoneError && <span className="text-red-500 text-xs mt-1">{phoneError}</span>}
+                  <div className="flex">
+                    <span className="inline-flex items-center px-3 h-12 bg-gray-200 border border-r-0 border-border/50 rounded-l-md text-muted-foreground text-sm font-medium">
+                      +91
+                    </span>
+                    <Input
+                      type="tel"
+                      placeholder="10 digit number"
+                      value={formData.phone}
+                      onChange={(e) => handlePhoneChange(e.target.value)}
+                      maxLength={10}
+                      required
+                      className={`h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400 rounded-l-none ${phoneError ? 'border-red-400 focus:border-red-400' : ''}`}
+                    />
+                  </div>
+                  {phoneError && <span className="text-red-500 text-xs mt-1 block">{phoneError}</span>}
                 </div>
                 <div>
                   <Input

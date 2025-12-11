@@ -80,8 +80,13 @@ Invest In Your Future.
               name: e.target.value
             })} required className="h-12 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-accent" />
               <div className="flex-1">
-                <Input type="tel" placeholder="Phone (10 digits)" value={formData.phone} onChange={e => handlePhoneChange(e.target.value)} maxLength={10} required className={`h-12 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-accent ${phoneError ? 'border-red-400' : ''}`} />
-                {phoneError && <span className="text-red-300 text-xs mt-1">{phoneError}</span>}
+                <div className="flex">
+                  <span className="inline-flex items-center px-3 h-12 bg-primary-foreground/20 border border-r-0 border-primary-foreground/20 rounded-l-md text-primary-foreground text-sm font-medium">
+                    +91
+                  </span>
+                  <Input type="tel" placeholder="10 digit number" value={formData.phone} onChange={e => handlePhoneChange(e.target.value)} maxLength={10} required className={`h-12 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-accent rounded-l-none ${phoneError ? 'border-red-400' : ''}`} />
+                </div>
+                {phoneError && <span className="text-red-300 text-xs mt-1 block">{phoneError}</span>}
               </div>
             </div>
             <div className="flex flex-col md:flex-row gap-4">
