@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Phone, Gift, BadgeCheck } from "lucide-react";
 import heroImage from "@/assets/hero-aerial.jpg";
+import { isValidIndianPhone } from "@/lib/validation";
+
 const HeroSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -11,11 +13,30 @@ const HeroSection = () => {
     email: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
+
+  const handlePhoneChange = (value: string) => {
+    const digitsOnly = value.replace(/\D/g, '').slice(0, 10);
+    setFormData({ ...formData, phone: digitsOnly });
+    
+    if (digitsOnly.length === 10 && !isValidIndianPhone(digitsOnly)) {
+      setPhoneError('Must start with 6, 7, 8, or 9');
+    } else {
+      setPhoneError('');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!isValidIndianPhone(formData.phone)) {
+      setPhoneError('Enter valid 10-digit Indian number');
+      toast.error('Please enter a valid 10-digit Indian phone number');
+      return;
+    }
+    
     setIsSubmitting(true);
     try {
-      // Webhook integration - replace with your Pabbly Connect URL
       const webhookUrl = "YOUR_PABBLY_WEBHOOK_URL";
       await fetch(webhookUrl, {
         method: "POST",
@@ -29,18 +50,12 @@ const HeroSection = () => {
         }),
       });
       toast.success("Thank you! Our team will contact you shortly.");
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-      });
+      setFormData({ name: "", phone: "", email: "" });
+      setPhoneError("");
     } catch (error) {
       toast.success("Thank you! Our team will contact you shortly.");
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-      });
+      setFormData({ name: "", phone: "", email: "" });
+      setPhoneError("");
     } finally {
       setIsSubmitting(false);
     }
@@ -125,17 +140,14 @@ const HeroSection = () => {
                 <div>
                   <Input
                     type="tel"
-                    placeholder="Phone Number"
+                    placeholder="Phone Number (10 digits)"
                     value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        phone: e.target.value,
-                      })
-                    }
+                    onChange={(e) => handlePhoneChange(e.target.value)}
+                    maxLength={10}
                     required
-                    className="h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400"
+                    className={`h-12 bg-gray-50 border-border/50 focus:border-accent shadow-inner placeholder:text-gray-400 ${phoneError ? 'border-red-400 focus:border-red-400' : ''}`}
                   />
+                  {phoneError && <span className="text-red-500 text-xs mt-1">{phoneError}</span>}
                 </div>
                 <div>
                   <Input

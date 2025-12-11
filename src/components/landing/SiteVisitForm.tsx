@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
+import { isValidIndianPhone } from '@/lib/validation';
 
 interface SiteVisitFormProps {
   source?: string;
@@ -10,9 +11,29 @@ interface SiteVisitFormProps {
 const SiteVisitForm = ({ source = 'Site Visit Form', className = '', variant = 'vertical' }: SiteVisitFormProps) => {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
+
+  const handlePhoneChange = (value: string) => {
+    // Only allow digits
+    const digitsOnly = value.replace(/\D/g, '').slice(0, 10);
+    setFormData({ ...formData, phone: digitsOnly });
+    
+    if (digitsOnly.length === 10 && !isValidIndianPhone(digitsOnly)) {
+      setPhoneError('Must start with 6, 7, 8, or 9');
+    } else {
+      setPhoneError('');
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!isValidIndianPhone(formData.phone)) {
+      setPhoneError('Enter valid 10-digit Indian number');
+      toast.error('Please enter a valid 10-digit Indian phone number');
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
@@ -28,9 +49,11 @@ const SiteVisitForm = ({ source = 'Site Visit Form', className = '', variant = '
 
       toast.success('Thank you! We will contact you shortly.');
       setFormData({ name: '', phone: '', email: '' });
+      setPhoneError('');
     } catch (error) {
       toast.success('Thank you! We will contact you shortly.');
       setFormData({ name: '', phone: '', email: '' });
+      setPhoneError('');
     } finally {
       setIsSubmitting(false);
     }
@@ -56,14 +79,18 @@ const SiteVisitForm = ({ source = 'Site Visit Form', className = '', variant = '
                 required
                 className="w-full bg-white/95 rounded-lg px-4 py-3.5 text-primary placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-accent border-0 transition-all"
               />
-              <input
-                type="tel"
-                placeholder="Phone"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                required
-                className="w-full bg-white/95 rounded-lg px-4 py-3.5 text-primary placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-accent border-0 transition-all"
-              />
+              <div className="flex flex-col">
+                <input
+                  type="tel"
+                  placeholder="Phone (10 digits)"
+                  value={formData.phone}
+                  onChange={(e) => handlePhoneChange(e.target.value)}
+                  maxLength={10}
+                  required
+                  className={`w-full bg-white/95 rounded-lg px-4 py-3.5 text-primary placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-accent border-0 transition-all ${phoneError ? 'ring-2 ring-red-400' : ''}`}
+                />
+                {phoneError && <span className="text-red-300 text-xs mt-1">{phoneError}</span>}
+              </div>
               <input
                 type="email"
                 placeholder="Email"
@@ -101,14 +128,18 @@ const SiteVisitForm = ({ source = 'Site Visit Form', className = '', variant = '
           required
           className="w-full bg-transparent border-0 border-b border-border/60 focus:border-accent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-0 transition-colors"
         />
-        <input
-          type="tel"
-          placeholder="Phone"
-          value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          required
-          className="w-full bg-transparent border-0 border-b border-border/60 focus:border-accent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-0 transition-colors"
-        />
+        <div>
+          <input
+            type="tel"
+            placeholder="Phone (10 digits)"
+            value={formData.phone}
+            onChange={(e) => handlePhoneChange(e.target.value)}
+            maxLength={10}
+            required
+            className={`w-full bg-transparent border-0 border-b border-border/60 focus:border-accent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-0 transition-colors ${phoneError ? 'border-red-400' : ''}`}
+          />
+          {phoneError && <span className="text-red-500 text-xs">{phoneError}</span>}
+        </div>
         <input
           type="email"
           placeholder="Email"
