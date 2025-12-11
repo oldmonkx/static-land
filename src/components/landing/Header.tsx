@@ -61,8 +61,8 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, '#contact')}
+            href="#hero-form"
+            onClick={(e) => handleNavClick(e, '#hero-form')}
             className="px-6 py-2.5 bg-accent text-white font-bold rounded-md hover:bg-accent/90 transition-colors shadow-lg"
           >
             Enquire Now
@@ -94,8 +94,8 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
+              href="#hero-form"
+              onClick={(e) => handleNavClick(e, '#hero-form')}
               className="mt-4 w-full block px-6 py-3 bg-accent text-white font-bold rounded-md hover:bg-accent/90 transition-colors text-center shadow-md"
             >
               Enquire Now

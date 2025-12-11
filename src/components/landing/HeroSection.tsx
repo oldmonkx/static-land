@@ -96,7 +96,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Form - 2 columns */}
-          <div className="lg:col-span-2 lg:justify-self-end w-full max-w-md">
+          <div id="hero-form" className="lg:col-span-2 lg:justify-self-end w-full max-w-md">
             <div className="bg-white/90 backdrop-blur-xl p-8 md:p-10 rounded-2xl shadow-2xl border border-white/20">
               <div className="text-center mb-8">
                 <h2 className="text-2xl font-serif font-semibold text-primary mb-1">Get Price Sheet & Layout</h2>
