@@ -80,15 +80,20 @@ const SiteVisitForm = ({ source = 'Site Visit Form', className = '', variant = '
                 className="w-full bg-white/95 rounded-lg px-4 py-3.5 text-primary placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-accent border-0 transition-all"
               />
               <div className="flex flex-col">
-                <input
-                  type="tel"
-                  placeholder="Phone (10 digits)"
-                  value={formData.phone}
-                  onChange={(e) => handlePhoneChange(e.target.value)}
-                  maxLength={10}
-                  required
-                  className={`w-full bg-white/95 rounded-lg px-4 py-3.5 text-primary placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-accent border-0 transition-all ${phoneError ? 'ring-2 ring-red-400' : ''}`}
-                />
+                <div className="flex">
+                  <span className="inline-flex items-center px-3 bg-white/80 rounded-l-lg text-primary text-sm font-medium">
+                    +91
+                  </span>
+                  <input
+                    type="tel"
+                    placeholder="10 digit number"
+                    value={formData.phone}
+                    onChange={(e) => handlePhoneChange(e.target.value)}
+                    maxLength={10}
+                    required
+                    className={`w-full bg-white/95 rounded-r-lg rounded-l-none px-4 py-3.5 text-primary placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-accent border-0 transition-all ${phoneError ? 'ring-2 ring-red-400' : ''}`}
+                  />
+                </div>
                 {phoneError && <span className="text-red-300 text-xs mt-1">{phoneError}</span>}
               </div>
               <input
@@ -129,15 +134,18 @@ const SiteVisitForm = ({ source = 'Site Visit Form', className = '', variant = '
           className="w-full bg-transparent border-0 border-b border-border/60 focus:border-accent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-0 transition-colors"
         />
         <div>
-          <input
-            type="tel"
-            placeholder="Phone (10 digits)"
-            value={formData.phone}
-            onChange={(e) => handlePhoneChange(e.target.value)}
-            maxLength={10}
-            required
-            className={`w-full bg-transparent border-0 border-b border-border/60 focus:border-accent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-0 transition-colors ${phoneError ? 'border-red-400' : ''}`}
-          />
+          <div className="flex items-center border-b border-border/60 focus-within:border-accent transition-colors">
+            <span className="text-muted-foreground text-sm font-medium pr-2">+91</span>
+            <input
+              type="tel"
+              placeholder="10 digit number"
+              value={formData.phone}
+              onChange={(e) => handlePhoneChange(e.target.value)}
+              maxLength={10}
+              required
+              className={`w-full bg-transparent border-0 px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-0 ${phoneError ? 'text-red-500' : ''}`}
+            />
+          </div>
           {phoneError && <span className="text-red-500 text-xs">{phoneError}</span>}
         </div>
         <input

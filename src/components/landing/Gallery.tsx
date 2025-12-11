@@ -123,8 +123,13 @@ const Gallery = () => {
             name: e.target.value
           })} required />
             <div>
-              <Input placeholder="Phone (10 digits)" type="tel" value={formData.phone} onChange={e => handlePhoneChange(e.target.value)} maxLength={10} required className={phoneError ? 'border-red-400' : ''} />
-              {phoneError && <span className="text-red-500 text-xs">{phoneError}</span>}
+              <div className="flex">
+                <span className="inline-flex items-center px-3 bg-muted border border-r-0 border-input rounded-l-md text-muted-foreground text-sm font-medium">
+                  +91
+                </span>
+                <Input placeholder="10 digit number" type="tel" value={formData.phone} onChange={e => handlePhoneChange(e.target.value)} maxLength={10} required className={`rounded-l-none ${phoneError ? 'border-red-400' : ''}`} />
+              </div>
+              {phoneError && <span className="text-red-500 text-xs mt-1 block">{phoneError}</span>}
             </div>
             <Input placeholder="Email Address" type="email" value={formData.email} onChange={e => setFormData({
             ...formData,
