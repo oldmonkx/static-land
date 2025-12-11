@@ -4,22 +4,15 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
-const galleryImages = [{
-  src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop',
-  alt: 'Modern Villa Exterior'
-}, {
-  src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
-  alt: 'Luxury Home Design'
-}, {
-  src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
-  alt: 'Premium Villa Plot'
-}, {
-  src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop',
-  alt: 'Elegant Home Architecture'
-}, {
-  src: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop',
-  alt: 'Contemporary Villa'
-}];
+import gallery1 from '@/assets/gallery-1.jpg';
+import gallery2 from '@/assets/gallery-2.jpg';
+import gallery3 from '@/assets/gallery-3.jpg';
+
+const galleryImages = [
+  { src: gallery1, alt: 'Aerial view of Casa Dale villa plots with boundary markers' },
+  { src: gallery2, alt: 'Casa Dale main road entrance and development' },
+  { src: gallery3, alt: 'Aerial view of Casa Dale plots with water tank' },
+];
 const Gallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
