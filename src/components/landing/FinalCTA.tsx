@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { ArrowRight } from 'lucide-react';
 import { isValidIndianPhone } from '@/lib/validation';
+import { submitLead } from '@/lib/leadService';
 
 const FinalCTA = () => {
   const [formData, setFormData] = useState({
@@ -36,18 +37,7 @@ const FinalCTA = () => {
     
     setIsSubmitting(true);
     try {
-      const webhookUrl = 'YOUR_PABBLY_WEBHOOK_URL';
-      await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ...formData,
-          source: 'Final CTA Form',
-          timestamp: new Date().toISOString()
-        })
-      });
+      await submitLead({ ...formData, source: 'Final CTA Form' });
       toast.success('Thank you! Our team will contact you shortly.');
       setFormData({ name: '', phone: '', email: '' });
       setPhoneError('');

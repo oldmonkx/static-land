@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { isValidIndianPhone } from '@/lib/validation';
+import { submitLead } from '@/lib/leadService';
 import gallery1 from '@/assets/gallery-1.jpg';
 import gallery2 from '@/assets/gallery-2.jpg';
 import gallery3 from '@/assets/gallery-3.jpg';
@@ -52,17 +53,7 @@ const Gallery = () => {
     
     setIsSubmitting(true);
     try {
-      await fetch('YOUR_PABBLY_WEBHOOK_URL', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ...formData,
-          source: 'Gallery View',
-          timestamp: new Date().toISOString()
-        })
-      });
+      await submitLead({ ...formData, source: 'Gallery View' });
       toast({
         title: 'Success!',
         description: 'You can now browse the full gallery.'

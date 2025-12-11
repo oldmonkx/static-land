@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { isValidIndianPhone } from '@/lib/validation';
+import { submitLead } from '@/lib/leadService';
 
 interface SiteVisitFormProps {
   source?: string;
@@ -37,16 +38,7 @@ const SiteVisitForm = ({ source = 'Site Visit Form', className = '', variant = '
     setIsSubmitting(true);
 
     try {
-      await fetch('YOUR_PABBLY_WEBHOOK_URL', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          source,
-          timestamp: new Date().toISOString(),
-        }),
-      });
-
+      await submitLead({ ...formData, source });
       toast.success('Thank you! We will contact you shortly.');
       setFormData({ name: '', phone: '', email: '' });
       setPhoneError('');
