@@ -159,11 +159,10 @@ const LocationSection = () => {
           </div>
         </div>
 
-        {/* Site Visit Form */}
-        <div className="max-w-md mx-auto mt-16">
-          <SiteVisitForm source="Location Section" />
-        </div>
       </div>
+      
+      {/* Site Visit Form - Full width horizontal strip */}
+      <SiteVisitForm source="Location Section" variant="horizontal" className="mt-16" />
     </section>
   );
 };
