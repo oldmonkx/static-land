@@ -160,7 +160,7 @@ const HeroSection = () => {
                     backgroundColor: "#D4AF37",
                   }}
                 >
-                  {isSubmitting ? "Submitting..." : "Enquire Now"}
+                  {isSubmitting ? "Submitting..." : "Download Price Sheet"}
                 </Button>
               </form>
 
