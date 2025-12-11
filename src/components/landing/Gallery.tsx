@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { isValidIndianPhone } from '@/lib/validation';
 import gallery1 from '@/assets/gallery-1.jpg';
 import gallery2 from '@/assets/gallery-2.jpg';
 import gallery3 from '@/assets/gallery-3.jpg';
@@ -13,19 +14,42 @@ const galleryImages = [
   { src: gallery2, alt: 'Casa Dale main road entrance and development' },
   { src: gallery3, alt: 'Aerial view of Casa Dale plots with water tank' },
 ];
+
 const Gallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: ''
   });
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+
+  const handlePhoneChange = (value: string) => {
+    const digitsOnly = value.replace(/\D/g, '').slice(0, 10);
+    setFormData({ ...formData, phone: digitsOnly });
+    
+    if (digitsOnly.length === 10 && !isValidIndianPhone(digitsOnly)) {
+      setPhoneError('Must start with 6, 7, 8, or 9');
+    } else {
+      setPhoneError('');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!isValidIndianPhone(formData.phone)) {
+      setPhoneError('Enter valid 10-digit Indian number');
+      toast({
+        title: 'Invalid Phone',
+        description: 'Please enter a valid 10-digit Indian phone number',
+        variant: 'destructive'
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     try {
       await fetch('YOUR_PABBLY_WEBHOOK_URL', {
@@ -44,11 +68,8 @@ const Gallery = () => {
         description: 'You can now browse the full gallery.'
       });
       setIsModalOpen(false);
-      setFormData({
-        name: '',
-        phone: '',
-        email: ''
-      });
+      setFormData({ name: '', phone: '', email: '' });
+      setPhoneError('');
     } catch (error) {
       toast({
         title: 'Error',
@@ -101,10 +122,10 @@ const Gallery = () => {
             ...formData,
             name: e.target.value
           })} required />
-            <Input placeholder="Phone Number" type="tel" value={formData.phone} onChange={e => setFormData({
-            ...formData,
-            phone: e.target.value
-          })} required />
+            <div>
+              <Input placeholder="Phone (10 digits)" type="tel" value={formData.phone} onChange={e => handlePhoneChange(e.target.value)} maxLength={10} required className={phoneError ? 'border-red-400' : ''} />
+              {phoneError && <span className="text-red-500 text-xs">{phoneError}</span>}
+            </div>
             <Input placeholder="Email Address" type="email" value={formData.email} onChange={e => setFormData({
             ...formData,
             email: e.target.value
