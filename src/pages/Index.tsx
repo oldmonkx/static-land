@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
 import TrustStrip from '@/components/landing/TrustStrip';
+import AtmosBreathe from '@/components/landing/AtmosBreathe';
 import HighwayFacing from '@/components/landing/HighwayFacing';
 import ExperienceNature from '@/components/landing/ExperienceNature';
 import LivingHarmony from '@/components/landing/LivingHarmony';
@@ -10,6 +11,7 @@ import GrowthStory from '@/components/landing/GrowthStory';
 import MasterPlan from '@/components/landing/MasterPlan';
 import PlotSizes from '@/components/landing/PlotSizes';
 import Gallery from '@/components/landing/Gallery';
+import ClubMembership from '@/components/landing/ClubMembership';
 import LocationSection from '@/components/landing/LocationSection';
 import Certifications from '@/components/landing/Certifications';
 import FinalCTA from '@/components/landing/FinalCTA';
@@ -33,6 +35,7 @@ const Index = () => {
         <main>
           <HeroSection />
           <TrustStrip />
+          <AtmosBreathe />
           <HighwayFacing />
           <ExperienceNature />
           <LivingHarmony />
@@ -41,6 +44,7 @@ const Index = () => {
           <MasterPlan />
           <PlotSizes />
           <Gallery />
+          <ClubMembership />
           <LocationSection />
           <Certifications />
           <FinalCTA />
