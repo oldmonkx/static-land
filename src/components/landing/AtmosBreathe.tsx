@@ -1,4 +1,4 @@
-import atmosBreatheImg from '@/assets/atmos-breathe.png';
+import atmosBreatheLogo from '@/assets/atmos-breathe-logo.png';
 import casaDaleLogo from '@/assets/casa-dale-logo.png';
 
 const AtmosBreathe = () => {
@@ -8,44 +8,35 @@ const AtmosBreathe = () => {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
       
       <div className="container mx-auto px-4">
-        {/* From the Makers of */}
+        {/* From the Makers of - Atmos Breathe Logo */}
         <div className="text-center mb-12">
-          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-3 font-sans">
+          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-4 font-sans">
             From the Makers of
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-primary font-medium">
-            Atmos Breathe
-          </h2>
-          <div className="w-24 h-0.5 bg-accent mx-auto mt-6" />
+          <img 
+            src={atmosBreatheLogo} 
+            alt="Atmos Breathe Logo" 
+            className="h-16 md:h-20 lg:h-24 mx-auto"
+          />
+          <div className="w-24 h-0.5 bg-accent mx-auto mt-8" />
         </div>
 
-        {/* Atmos Breathe Image */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <div className="relative rounded-lg overflow-hidden shadow-2xl">
-            <img 
-              src={atmosBreatheImg} 
-              alt="Atmos Breathe - Premium Villa Community" 
-              className="w-full h-auto object-cover"
-            />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
-          </div>
-        </div>
-
-        {/* Presenting Casa Dale */}
+        {/* Presenting Casa Dale - on dark background */}
         <div className="text-center">
-          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-3 font-sans">
+          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-6 font-sans">
             Presenting
           </p>
-          <img 
-            src={casaDaleLogo} 
-            alt="Casa Dale Logo" 
-            className="h-16 md:h-20 mx-auto mb-6"
-          />
-          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto font-sans leading-relaxed">
-            A biophilic boutique villa plot community crafted for{' '}
-            <span className="text-accent font-medium">nature-led living</span>
-          </p>
+          <div className="bg-primary rounded-2xl py-10 px-6 md:py-14 md:px-12 max-w-3xl mx-auto">
+            <img 
+              src={casaDaleLogo} 
+              alt="Casa Dale Logo" 
+              className="h-24 md:h-32 lg:h-40 mx-auto mb-6"
+            />
+            <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto font-sans leading-relaxed">
+              A biophilic boutique villa plot community crafted for{' '}
+              <span className="text-accent font-medium">nature-led living</span>
+            </p>
+          </div>
         </div>
       </div>
 
