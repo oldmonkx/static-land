@@ -1,44 +1,85 @@
 import atmosBreatheLogo from '@/assets/atmos-breathe-logo.png';
 import casaDaleLogo from '@/assets/casa-dale-logo.png';
+import atmosBreatheBg from '@/assets/atmos-breathe-bg.jpg';
+
 const AtmosBreathe = () => {
-  return <section className="py-20 md:py-28 lg:py-32 bg-primary relative overflow-hidden">
-      {/* Subtle radial gradient for depth */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.03)_0%,_transparent_70%)]" />
+  return (
+    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${atmosBreatheBg})` }}
+      />
       
-      <div className="container mx-auto px-4 relative z-10">
+      {/* Dark overlay for better text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+      
+      {/* Warm golden light overlay */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-amber-500/5 to-amber-400/10" />
+      
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10 text-center">
         {/* From the Makers of */}
-        <p className="text-xs md:text-sm uppercase tracking-[0.4em] text-primary-foreground/60 text-center mb-8 font-sans">
+        <p className="text-xs md:text-sm uppercase tracking-[0.5em] text-white/70 mb-8 md:mb-10 font-sans">
           From the Makers of
         </p>
         
-        {/* Atmos Breathe Logo - floating freely */}
+        {/* Atmos Breathe Logo - Glowing Light Box Effect */}
         <div className="flex justify-center mb-12 md:mb-16">
-          <img src={atmosBreatheLogo} alt="Atmos Breathe Logo" className="h-36 md:h-38 lg:h-32 drop-shadow-[0_4px_20px_rgba(255,255,255,0.15)]" />
+          <div className="relative">
+            {/* Outer glow */}
+            <div className="absolute -inset-6 md:-inset-8 bg-gradient-to-r from-amber-400/20 via-amber-300/30 to-amber-400/20 blur-2xl rounded-3xl" />
+            {/* Inner warm glow */}
+            <div className="absolute -inset-3 md:-inset-4 bg-white/10 backdrop-blur-sm rounded-2xl" />
+            {/* Logo container */}
+            <div className="relative bg-white/5 backdrop-blur-md border border-white/20 rounded-xl px-8 py-6 md:px-12 md:py-8 shadow-[0_0_60px_rgba(251,191,36,0.15)]">
+              <img 
+                src={atmosBreatheLogo} 
+                alt="Atmos Breathe Logo" 
+                className="h-20 md:h-24 lg:h-28 drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]" 
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Elegant divider */}
-        <div className="flex items-center justify-center gap-4 mb-12 md:mb-16">
-          <div className="w-16 md:w-24 h-px bg-gradient-to-r from-transparent to-accent/50" />
-          <span className="text-accent text-lg">◆</span>
-          <div className="w-16 md:w-24 h-px bg-gradient-to-l from-transparent to-accent/50" />
+        {/* Elegant Divider */}
+        <div className="flex items-center justify-center gap-6 mb-12 md:mb-16">
+          <div className="w-16 md:w-28 h-px bg-gradient-to-r from-transparent via-white/40 to-white/60" />
+          <span className="text-amber-300/80 text-sm">✦</span>
+          <div className="w-16 md:w-28 h-px bg-gradient-to-l from-transparent via-white/40 to-white/60" />
         </div>
 
         {/* Presenting */}
-        <p className="text-xs md:text-sm uppercase tracking-[0.4em] text-primary-foreground/60 text-center mb-10 font-sans">
+        <p className="text-xs md:text-sm uppercase tracking-[0.5em] text-white/70 mb-10 md:mb-12 font-sans">
           Presenting
         </p>
 
-        {/* Casa Dale Logo - prominent */}
-        <div className="flex justify-center mb-8 md:mb-10">
-          <img src={casaDaleLogo} alt="Casa Dale Logo" className="h-28 md:h-36 lg:h-44 drop-shadow-[0_4px_30px_rgba(255,255,255,0.2)]" />
+        {/* Casa Dale Logo - Larger Glowing Light Box Effect */}
+        <div className="flex justify-center mb-10 md:mb-12">
+          <div className="relative">
+            {/* Outer glow - stronger */}
+            <div className="absolute -inset-8 md:-inset-12 bg-gradient-to-r from-amber-400/25 via-amber-300/35 to-amber-400/25 blur-3xl rounded-3xl" />
+            {/* Inner warm glow */}
+            <div className="absolute -inset-4 md:-inset-6 bg-white/10 backdrop-blur-sm rounded-2xl" />
+            {/* Logo container */}
+            <div className="relative bg-white/5 backdrop-blur-md border border-white/25 rounded-xl px-10 py-8 md:px-16 md:py-10 shadow-[0_0_80px_rgba(251,191,36,0.2)]">
+              <img 
+                src={casaDaleLogo} 
+                alt="Casa Dale Logo" 
+                className="h-28 md:h-36 lg:h-44 drop-shadow-[0_0_30px_rgba(255,255,255,0.4)]" 
+              />
+            </div>
+          </div>
         </div>
 
         {/* Tagline */}
-        <p className="text-center text-base md:text-lg lg:text-xl text-primary-foreground/80 max-w-2xl mx-auto font-sans leading-relaxed tracking-wide">
+        <p className="text-center text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto font-serif leading-relaxed tracking-wide">
           A biophilic boutique villa plot community crafted for{' '}
-          <span className="text-accent font-medium">nature-led living</span>
+          <span className="text-amber-200 font-medium italic">nature-led living</span>
         </p>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AtmosBreathe;
