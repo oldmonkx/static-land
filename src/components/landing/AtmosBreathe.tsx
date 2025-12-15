@@ -13,11 +13,13 @@ const AtmosBreathe = () => {
           <p className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-4 font-sans">
             From the Makers of
           </p>
-          <img 
-            src={atmosBreatheLogo} 
-            alt="Atmos Breathe Logo" 
-            className="h-16 md:h-20 lg:h-24 mx-auto"
-          />
+          <div className="bg-primary rounded-2xl py-6 px-8 md:py-8 md:px-12 max-w-xl mx-auto">
+            <img 
+              src={atmosBreatheLogo} 
+              alt="Atmos Breathe Logo" 
+              className="h-16 md:h-20 lg:h-24 mx-auto"
+            />
+          </div>
           <div className="w-24 h-0.5 bg-accent mx-auto mt-8" />
         </div>
 
