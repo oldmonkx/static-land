@@ -23,7 +23,7 @@ const ExperienceNature = () => {
       
       <div className="relative z-10">
         {/* Site Visit Form - Glassmorphism */}
-        <SiteVisitForm variant="horizontal" source="Experience Nature Section" />
+        <SiteVisitForm variant="horizontal" style="glassmorphism" source="Experience Nature Section" />
         
         {/* Experience Nature Content */}
         <div className="container mx-auto px-4 pt-8 md:pt-12">
