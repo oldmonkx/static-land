@@ -1,9 +1,7 @@
 import atmosBreatheLogo from '@/assets/atmos-breathe-logo.png';
 import casaDaleLogo from '@/assets/casa-dale-logo.png';
-
 const AtmosBreathe = () => {
-  return (
-    <section className="py-20 md:py-28 lg:py-32 bg-primary relative overflow-hidden">
+  return <section className="py-20 md:py-28 lg:py-32 bg-primary relative overflow-hidden">
       {/* Subtle radial gradient for depth */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.03)_0%,_transparent_70%)]" />
       
@@ -15,11 +13,7 @@ const AtmosBreathe = () => {
         
         {/* Atmos Breathe Logo - floating freely */}
         <div className="flex justify-center mb-12 md:mb-16">
-          <img 
-            src={atmosBreatheLogo} 
-            alt="Atmos Breathe Logo" 
-            className="h-14 md:h-18 lg:h-20 drop-shadow-[0_4px_20px_rgba(255,255,255,0.15)]"
-          />
+          <img src={atmosBreatheLogo} alt="Atmos Breathe Logo" className="h-36 md:h-38 lg:h-32 drop-shadow-[0_4px_20px_rgba(255,255,255,0.15)]" />
         </div>
 
         {/* Elegant divider */}
@@ -36,11 +30,7 @@ const AtmosBreathe = () => {
 
         {/* Casa Dale Logo - prominent */}
         <div className="flex justify-center mb-8 md:mb-10">
-          <img 
-            src={casaDaleLogo} 
-            alt="Casa Dale Logo" 
-            className="h-28 md:h-36 lg:h-44 drop-shadow-[0_4px_30px_rgba(255,255,255,0.2)]"
-          />
+          <img src={casaDaleLogo} alt="Casa Dale Logo" className="h-28 md:h-36 lg:h-44 drop-shadow-[0_4px_30px_rgba(255,255,255,0.2)]" />
         </div>
 
         {/* Tagline */}
@@ -49,8 +39,6 @@ const AtmosBreathe = () => {
           <span className="text-accent font-medium">nature-led living</span>
         </p>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AtmosBreathe;
