@@ -37,7 +37,6 @@ const Index = () => {
           <TrustStrip />
           <AtmosBreathe />
           <HighwayFacing />
-          <SiteVisitSection />
           <ExperienceNature />
           <LivingHarmony />
           <SiteVisitSection />
