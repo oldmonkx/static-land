@@ -54,7 +54,10 @@ const SiteVisitForm = ({ source = 'Site Visit Form', className = '', variant = '
   // Horizontal variant for desktop/tablet
   if (variant === 'horizontal') {
     return (
-      <div className={`bg-primary py-12 md:py-16 ${className}`}>
+      <div className={`relative bg-gradient-to-b from-[#1d3d28] via-primary to-[#1d3d28] py-16 md:py-20 ${className}`}>
+        {/* Top decorative border */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+        
         <div className="container mx-auto px-4">
           <h3 className="font-serif text-2xl md:text-3xl text-white mb-8 text-center">
             Schedule Your Site Visit
@@ -105,6 +108,15 @@ const SiteVisitForm = ({ source = 'Site Visit Form', className = '', variant = '
               </button>
             </div>
           </form>
+        </div>
+        
+        {/* Bottom decorative divider */}
+        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center pb-2">
+          <div className="flex items-center gap-3">
+            <div className="w-16 md:w-24 h-px bg-gradient-to-r from-transparent to-accent/60" />
+            <div className="w-2 h-2 rotate-45 bg-accent/80" />
+            <div className="w-16 md:w-24 h-px bg-gradient-to-l from-transparent to-accent/60" />
+          </div>
         </div>
       </div>
     );
