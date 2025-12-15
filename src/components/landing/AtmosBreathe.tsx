@@ -3,47 +3,52 @@ import casaDaleLogo from '@/assets/casa-dale-logo.png';
 
 const AtmosBreathe = () => {
   return (
-    <section className="py-16 md:py-24 bg-background relative overflow-hidden">
-      {/* Subtle decorative element */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+    <section className="py-20 md:py-28 lg:py-32 bg-primary relative overflow-hidden">
+      {/* Subtle radial gradient for depth */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.03)_0%,_transparent_70%)]" />
       
-      <div className="container mx-auto px-4">
-        {/* From the Makers of - Atmos Breathe Logo */}
-        <div className="text-center mb-12">
-          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-4 font-sans">
-            From the Makers of
-          </p>
-          <div className="bg-primary rounded-2xl py-6 px-8 md:py-8 md:px-12 max-w-xl mx-auto">
-            <img 
-              src={atmosBreatheLogo} 
-              alt="Atmos Breathe Logo" 
-              className="h-16 md:h-20 lg:h-24 mx-auto"
-            />
-          </div>
-          <div className="w-24 h-0.5 bg-accent mx-auto mt-8" />
+      <div className="container mx-auto px-4 relative z-10">
+        {/* From the Makers of */}
+        <p className="text-xs md:text-sm uppercase tracking-[0.4em] text-primary-foreground/60 text-center mb-8 font-sans">
+          From the Makers of
+        </p>
+        
+        {/* Atmos Breathe Logo - floating freely */}
+        <div className="flex justify-center mb-12 md:mb-16">
+          <img 
+            src={atmosBreatheLogo} 
+            alt="Atmos Breathe Logo" 
+            className="h-14 md:h-18 lg:h-20 drop-shadow-[0_4px_20px_rgba(255,255,255,0.15)]"
+          />
         </div>
 
-        {/* Presenting Casa Dale - on dark background */}
-        <div className="text-center">
-          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-6 font-sans">
-            Presenting
-          </p>
-          <div className="bg-primary rounded-2xl py-10 px-6 md:py-14 md:px-12 max-w-3xl mx-auto">
-            <img 
-              src={casaDaleLogo} 
-              alt="Casa Dale Logo" 
-              className="h-24 md:h-32 lg:h-40 mx-auto mb-6"
-            />
-            <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto font-sans leading-relaxed">
-              A biophilic boutique villa plot community crafted for{' '}
-              <span className="text-accent font-medium">nature-led living</span>
-            </p>
-          </div>
+        {/* Elegant divider */}
+        <div className="flex items-center justify-center gap-4 mb-12 md:mb-16">
+          <div className="w-16 md:w-24 h-px bg-gradient-to-r from-transparent to-accent/50" />
+          <span className="text-accent text-lg">◆</span>
+          <div className="w-16 md:w-24 h-px bg-gradient-to-l from-transparent to-accent/50" />
         </div>
+
+        {/* Presenting */}
+        <p className="text-xs md:text-sm uppercase tracking-[0.4em] text-primary-foreground/60 text-center mb-10 font-sans">
+          Presenting
+        </p>
+
+        {/* Casa Dale Logo - prominent */}
+        <div className="flex justify-center mb-8 md:mb-10">
+          <img 
+            src={casaDaleLogo} 
+            alt="Casa Dale Logo" 
+            className="h-28 md:h-36 lg:h-44 drop-shadow-[0_4px_30px_rgba(255,255,255,0.2)]"
+          />
+        </div>
+
+        {/* Tagline */}
+        <p className="text-center text-base md:text-lg lg:text-xl text-primary-foreground/80 max-w-2xl mx-auto font-sans leading-relaxed tracking-wide">
+          A biophilic boutique villa plot community crafted for{' '}
+          <span className="text-accent font-medium">nature-led living</span>
+        </p>
       </div>
-
-      {/* Bottom decorative element */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
     </section>
   );
 };
