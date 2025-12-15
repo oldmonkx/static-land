@@ -31,16 +31,15 @@ const AtmosBreathe = () => {
         <div className="flex justify-center mb-6 md:mb-8">
           <div className="relative group">
             {/* LUXURY FIX: Gold Border Gradient & Crystal Effect */}
-            {/* Reduced padding (px-6 py-4) to make logo fill the space */}
-            <div className="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-amber-100/20 rounded-lg px-6 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+            <div className="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-amber-100/20 rounded-lg px-8 py-5 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
               {/* Subtle inner gold shine */}
               <div className="absolute inset-0 rounded-lg bg-gradient-to-tr from-amber-200/5 to-transparent opacity-50" />
 
               <img
                 src={atmosBreatheLogo}
                 alt="Atmos Breathe Logo"
-                /* Increased height: h-24 md:h-28 */
-                className="h-24 md:h-28 object-contain brightness-0 invert opacity-90 drop-shadow-md"
+                /* UPDATED SIZE: Increased from h-24 to h-32 (mobile) and h-44 (desktop) */
+                className="h-32 md:h-44 object-contain brightness-0 invert opacity-90 drop-shadow-md"
               />
             </div>
           </div>
@@ -61,7 +60,6 @@ const AtmosBreathe = () => {
             <div className="absolute -inset-10 bg-amber-500/10 blur-3xl rounded-full" />
 
             {/* Crystal Glass Container */}
-            {/* Reduced padding significantly (px-8 py-8) to remove empty space */}
             <div className="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-amber-100/30 rounded-xl px-8 py-8 md:px-10 md:py-10 shadow-[0_10px_40px_rgba(0,0,0,0.2)]">
               {/* Shine effect on top edge */}
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-50" />
